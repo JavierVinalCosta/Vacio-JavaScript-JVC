@@ -24,12 +24,22 @@
             var n=Number.parseInt(nota);
 
             // Estructura de control *** if - else ***
-
+            if (n>=0 && n<3){
+               calificacion='Muy deficiente'
+            }else if (n>=3 && n<5){
+                calificacion='Insuficiente'
+            }else if (n>=5 && n<6){
+                calificacion='Suficiente'
+            }else if (n>=6 && n<7){
+                calificacion='Bien'
+            }else if (n>=7 && n<9) {
+                calificacion='Notable'
+            }else if (n>=9 && n<10){
+                calificacion='Sobresaliente'
+            }
+            else calificacion='Incorrecta'
             /*
-            si n>=0 y n <3 entonces
-                calificacion <-- Muy deficiente
-            sino si n>=3 y n<5 entonces
-                calificacion <-- Insuficiente
+     
             sino si n>=5 y n<6 entonces
                 calificacion <-- Suficiente
             sino si n>=6 y n<7 entonces
