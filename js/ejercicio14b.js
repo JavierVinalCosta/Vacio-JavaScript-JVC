@@ -9,8 +9,10 @@
      if (v.length === 0) {
          return 0; // Manejo de array vacío para evitar división por cero
      }
+ 
      const suma = v.reduce((acc, curr) => acc + curr, 0);
-     return media = suma / v.length;
+     const media = suma / v.length;
+     return media;
  }
  /**
   * Obtiene la nota mínima
@@ -23,8 +25,8 @@
          return 0; // Manejo de array vacío
      }
  
-     return minimo = v.reduce((min, current) => (current < min ? current : min), v[0]);
-    
+     const minimo = v.reduce((min, current) => (current < min ? current : min), v[0]);
+     return minimo;
  }
  /**
   * Obtiene la nota Máxima
@@ -37,8 +39,8 @@
          return 0; // Manejo de array vacío
      }
  
-     return maximo = v.reduce((max, current) => (current > max ? current : max), v[0]);
-     
+     const maximo = v.reduce((max, current) => (current > max ? current : max), v[0]);
+     return maximo;
  }
  /**
   * Cuenta el número de aprobados
@@ -47,9 +49,9 @@
   */
  function contarAprobados(v)
  {
-     const umbralAprobacion = 5; // Cambia este valor si el umbral es diferente
-     return aprobados = v.filter(calificacion => calificacion >= umbralAprobacion).length;
-    
+     const aprobado = 5; // Cambia este valor si el umbral es diferente
+     const aprobados = v.filter(calificacion => calificacion >= aprobado).length;
+     return aprobados;
  }
  /**
   * Cuenta el número de suspensos
@@ -58,47 +60,49 @@
   */
  function contarSuspensos(v)
  {
-     const umbralSuspension = 5; // Cambia este valor si el umbral es diferente
-     return cantidadSuspensos = v.filter(calificacion => calificacion < umbralSuspension).length;
-     
+     const aprobado = 5; // Cambia este valor si el umbral es diferente
+     const cantidadSuspensos = v.filter(calificacion => calificacion < aprobado).length;
+     return cantidadSuspensos;
  }
  
-
-/**
- * Aplicacion principal Ejercicio14
- * @author: José Gaspar Sánchez García
- */
-
-function appMain() {
-
-    // Indique cuantas notas desea introducir
-    let numeroNotas = parseInt(prompt("¿Cuantas notas desea introdurcir?"));
-    let notas = new Array();
-    var n = -1;
-    // Leemos notas desde teclado
-    console.info(`Leemos ${numeroNotas} Notas desde teclado.`)
-    for (let i = 0; i < numeroNotas; i++) {
-        do {
-            n = parseFloat(prompt("Introduzca la nota número " + (i + 1) + ": "));
-        } while (n < 0 || n > 10)
-        notas[i] = n;
-        console.log(`notas[${i}]: ${notas[i]}`);
-    }
-
-
-    console.log("La nota media es " + calcularMedia(notas));
-    console.log("La nota mínima es " + calcularMinimo(notas));
-    console.log("La nota máxima es " + calcularMaximo(notas));
-    console.log("Aprobados: " + contarAprobados(notas));
-    console.log("Suspensos: " + contarSuspensos(notas));
-    return 0;
-}
-
-// Exportamos las funciones para poder realizar el Testing
-module.exports = {
-    calcularMedia,
-    calcularMaximo,
-    calcularMinimo,
-    contarAprobados,
-    contarSuspensos,
-};
+ 
+ 
+ /**
+  * Aplicacion principal Ejercicio14
+  * @author: José Gaspar Sánchez García
+  */
+ 
+ function appMain(){
+ 
+     // Indique cuantas notas desea introducir
+     let numeroNotas=parseInt(prompt("¿Cuantas notas desea introdurcir?"));
+     let notas=new Array();
+     var n=-1;
+     // Leemos notas desde teclado
+     console.info(`Leemos ${numeroNotas} Notas desde teclado.`)
+     for(let i=0; i<numeroNotas;i++)
+     {
+         do{
+             n=parseFloat(prompt("Introduzca la nota número "+(i+1)+": "));
+         }while(n<0 || n>10)
+         notas[i]=n;
+         console.log(`notas[${i}]: ${notas[i]}`);
+     }
+ 
+ 
+     console.log("La nota media es "+calcularMedia(notas));
+     console.log("La nota mínima es "+calcularMinimo(notas));
+     console.log("La nota máxima es "+calcularMaximo(notas));
+     console.log("Aprobados: "+contarAprobados(notas));
+     console.log("Suspensos: "+contarSuspensos(notas));
+     return 0;
+ }
+ 
+ // Exportamos las funciones para poder realizar el Testing
+ module.exports={
+     calcularMedia,
+     calcularMaximo,
+     calcularMinimo,
+     contarAprobados,
+     contarSuspensos,
+ };
