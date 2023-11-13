@@ -44,39 +44,42 @@ function calcularMaximo(v)
  * @param {Array} v 
  * @returns aprobados: número de aprobados.
  */
-function contarAprobados(v) {
+ function contarAprobados(v) {
     let aprobados = 0;
 
     if (v.length == 0) {
-        return 0
+        return 0;
     }
 
-    for (var i = 0; i < v.length; i++) {
-        if (v[i] >= 5)
+    for (let i = 0; i < v.length; i++) {
+        if (v[i] >= 5) {
             aprobados++;
+        }
     }
-
-
 
     return aprobados;
 }
+
 /**
  * Cuenta el número de suspensos
  * @param {Array} v 
  * @returns suspensos: número de suspensos.
  */
-function contarSuspensos(v)
-{
-    let suspensos=0;
-    if(v.length==0){return 0}
-    for (var i = 0; i<v.length; i++){   
-        if(v[i]<5)
+function contarSuspensos(v) {
+    let suspensos = 0;
+    if (v.length == 0) {
+        return 0;
+    }
+    for (let i = 0; i < v.length; i++) {
+        if (v[i] < 5) {
             suspensos++;
-    }   
+        }
+    }
     // COMPLETA TU CODIGO
 
     return suspensos;
 }
+
 
 
 
