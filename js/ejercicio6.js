@@ -16,6 +16,8 @@ function tirarDado()
  * @param {*} max: Máximo.
  * @returns n: Número aleatorio
  */
+
+
 function obtenerNumeroSecreto(min,max)
 {
     var suerte=0;
