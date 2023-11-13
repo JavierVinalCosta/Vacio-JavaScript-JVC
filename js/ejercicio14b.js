@@ -21,6 +21,7 @@ function calcularMedia(v)
  */
 function calcularMinimo(v)
 {
+    if(v.length==0){return 0}
     let minima= v.reduce((a, b) => Math.min(a, b));
     console.log(minima);// <-- CORRIGE E IMPLEMENTA EL CODIGO
     
@@ -33,6 +34,7 @@ function calcularMinimo(v)
  */
 function calcularMaximo(v)
 {
+    if(v.length==0){return 0}
     let maxima= v.reduce((a, b) => Math.max(a, b));
     console.log(maxima);
 
@@ -44,7 +46,9 @@ function calcularMaximo(v)
  * @returns aprobados: número de aprobados.
  */
 function contarAprobados(v)
-{ let aprobados=0;
+{
+    if(v.length==0){return 0}
+     let aprobados=0;
     for (var i = 0; i<v.length; i++){
         if(v[i]>=5)
             aprobados++;
@@ -62,6 +66,7 @@ function contarAprobados(v)
 function contarSuspensos(v)
 {
     let suspensos=0;
+    if(v.length==0){return 0}
     for (var i = 0; i<v.length; i++){   
         if(v[i]<5)
             suspensos++;
