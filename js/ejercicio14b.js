@@ -4,28 +4,15 @@
  * @returns media
  * @author: Autor/a
  */
- function getTotal(acc, act) {
-    return acc + act;
-  }
-  function getMin(acc, act) {
-    if (act < acc ){acc = act}
-    return acc;
-  }
-  function getMax(acc, act) {
-    if (act > acc ){acc = act}
-    return acc;
-  }
-  function checkAprovado(nota) {
-    return nota >= 5;
-  }
-  function checkSuspendido(nota) {
-    return nota < 5;
-  }
 function calcularMedia(v)
 {
-    if (v.length <= 0){return v}
-    let resultado= v.reduce(getTotal) / v.length
-    return resultado;
+    var suma=0;
+   
+    for (var i = 0; i<v.length; i++){
+         suma=suma+v[i];
+    }
+    var resultado=suma/v.length;
+     return resultado;
 }
 /**
  * Obtiene la nota mínima
@@ -34,9 +21,10 @@ function calcularMedia(v)
  */
 function calcularMinimo(v)
 {
-  if (v.length <= 0){return v}
-    let resultado = v.reduce(getMin)
-    return resultado;
+    if(v.length==0){return 0}
+    let minima= v.reduce((a, b) => Math.min(a, b));
+    
+    return minima;
 }
 /**
  * Obtiene la nota Máxima
@@ -45,20 +33,32 @@ function calcularMinimo(v)
  */
 function calcularMaximo(v)
 {
-  if (v.length <= 0){return v}
-    let resultado = v.reduce(getMax)
-    return resultado;
+    if(v.length==0){return 0}
+    let maxima= v.reduce((a, b) => Math.max(a, b));
+
+
+    return maxima;
 }
 /**
  * Cuenta el número de aprobados
  * @param {Array} v 
  * @returns aprobados: número de aprobados.
  */
-function contarAprobados(v)
-{
-  if (v.length <= 0){return v}
-    let resultado = v.filter(checkAprovado).length
-    return resultado;
+function contarAprobados(v) {
+    let aprobados = 0;
+
+    if (v.length == 0) {
+        return 0
+    }
+
+    for (var i = 0; i < v.length; i++) {
+        if (v[i] >= 5)
+            aprobados++;
+    }
+
+
+
+    return aprobados;
 }
 /**
  * Cuenta el número de suspensos
@@ -67,9 +67,15 @@ function contarAprobados(v)
  */
 function contarSuspensos(v)
 {
-  if (v.length <= 0){return v}
-    let resultado = v.filter(checkSuspendido).length
-    return resultado;;
+    let suspensos=0;
+    if(v.length==0){return 0}
+    for (var i = 0; i<v.length; i++){   
+        if(v[i]<5)
+            suspensos++;
+    }   
+    // COMPLETA TU CODIGO
+
+    return suspensos;
 }
 
 
@@ -87,7 +93,6 @@ function appMain(){
     var n=-1;
     // Leemos notas desde teclado
     console.info(`Leemos ${numeroNotas} Notas desde teclado.`)
-    if (numeroNotas >0){
     for(let i=0; i<numeroNotas;i++)
     {
         do{
@@ -96,9 +101,8 @@ function appMain(){
         notas[i]=n;
         console.log(`notas[${i}]: ${notas[i]}`);
     }
-  }
-  
-  console.log(notas)
+
+
     console.log("La nota media es "+calcularMedia(notas));
     console.log("La nota mínima es "+calcularMinimo(notas));
     console.log("La nota máxima es "+calcularMaximo(notas));
