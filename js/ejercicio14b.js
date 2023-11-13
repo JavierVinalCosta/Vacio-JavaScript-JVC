@@ -19,45 +19,50 @@ function calcularMedia(v) {
  * @param {Array} v 
  * @returns minima
  */
-function calcularMinimo(v)
-{
-    if(v.length==0){return 0}
-    let minima= v.reduce((a, b) => Math.min(a, b));
-    
-    return minima;
+function calcularMinimo(v) {
+
+    if (v.length == 0) { return 0 } else {
+        let minima = v.reduce((a, b) => Math.min(a, b));
+
+        return minima;
+    }
+
 }
 /**
  * Obtiene la nota Máxima
  * @param {Array} v 
  * @returns maxima
  */
-function calcularMaximo(v)
-{
-    if(v.length==0){return 0}
-    let maxima= v.reduce((a, b) => Math.max(a, b));
+function calcularMaximo(v) {
+    if (v.length == 0) {
+        return 0
+    } else {
+        let maxima = v.reduce((a, b) => Math.max(a, b));
 
 
-    return maxima;
+        return maxima;
+    }
 }
 /**
  * Cuenta el número de aprobados
  * @param {Array} v 
  * @returns aprobados: número de aprobados.
  */
- function contarAprobados(v) {
+function contarAprobados(v) {
     let aprobados = 0;
 
     if (v.length == 0) {
         return 0;
-    }
+    } else {
 
-    for (let i = 0; i < v.length; i++) {
-        if (v[i] >= 5) {
-            aprobados++;
+        for (let i = 0; i < v.length; i++) {
+            if (v[i] >= 5) {
+                aprobados++;
+            }
         }
-    }
 
-    return aprobados;
+        return aprobados;
+    }
 }
 
 /**
@@ -88,34 +93,33 @@ function contarSuspensos(v) {
  * @author: José Gaspar Sánchez García
  */
 
-function appMain(){
+function appMain() {
 
     // Indique cuantas notas desea introducir
-    let numeroNotas=parseInt(prompt("¿Cuantas notas desea introdurcir?"));
-    let notas=new Array();
-    var n=-1;
+    let numeroNotas = parseInt(prompt("¿Cuantas notas desea introdurcir?"));
+    let notas = new Array();
+    var n = -1;
     // Leemos notas desde teclado
     console.info(`Leemos ${numeroNotas} Notas desde teclado.`)
-    for(let i=0; i<numeroNotas;i++)
-    {
-        do{
-            n=parseFloat(prompt("Introduzca la nota número "+(i+1)+": "));
-        }while(n<0 || n>10)
-        notas[i]=n;
+    for (let i = 0; i < numeroNotas; i++) {
+        do {
+            n = parseFloat(prompt("Introduzca la nota número " + (i + 1) + ": "));
+        } while (n < 0 || n > 10)
+        notas[i] = n;
         console.log(`notas[${i}]: ${notas[i]}`);
     }
 
 
-    console.log("La nota media es "+calcularMedia(notas));
-    console.log("La nota mínima es "+calcularMinimo(notas));
-    console.log("La nota máxima es "+calcularMaximo(notas));
-    console.log("Aprobados: "+contarAprobados(notas));
-    console.log("Suspensos: "+contarSuspensos(notas));
+    console.log("La nota media es " + calcularMedia(notas));
+    console.log("La nota mínima es " + calcularMinimo(notas));
+    console.log("La nota máxima es " + calcularMaximo(notas));
+    console.log("Aprobados: " + contarAprobados(notas));
+    console.log("Suspensos: " + contarSuspensos(notas));
     return 0;
 }
 
 // Exportamos las funciones para poder realizar el Testing
-module.exports={
+module.exports = {
     calcularMedia,
     calcularMaximo,
     calcularMinimo,
