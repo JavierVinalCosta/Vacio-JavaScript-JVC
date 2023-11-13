@@ -24,7 +24,7 @@ function calcularMinimo(v)
     let minima= v.reduce((a, b) => Math.min(a, b));
     console.log(minima);// <-- CORRIGE E IMPLEMENTA EL CODIGO
     
-    return minim;
+    return minima;
 }
 /**
  * Obtiene la nota Máxima
