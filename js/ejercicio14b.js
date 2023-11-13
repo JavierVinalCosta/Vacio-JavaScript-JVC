@@ -4,15 +4,15 @@
  * @returns media
  * @author: Autor/a
  */
-function calcularMedia(v)
-{
-    var suma=0;
-   
-    for (var i = 0; i<v.length; i++){
-         suma=suma+v[i];
+function calcularMedia(v) {
+    var suma = 0;
+    if (v.length == 0) { return 0 } else {
+        for (var i = 0; i < v.length; i++) {
+            suma = suma + v[i];
+        }
+        var resultado = suma / v.length;
+        return resultado;
     }
-    var resultado=suma/v.length;
-     return resultado;
 }
 /**
  * Obtiene la nota mínima
