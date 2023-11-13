@@ -21,28 +21,25 @@ function calcularMedia(v) {
  */
 function calcularMinimo(v) {
 
-    if (v.length == 0) { return 0 } else {
-        let minima = v.reduce((a, b) => Math.min(a, b));
+    if (v.length == 0) { return 0 }  
+        return minima = v.reduce((a, b) => Math.min(a, b));
 
-        return minima;
+       
     }
 
-}
+
 /**
  * Obtiene la nota Máxima
  * @param {Array} v 
  * @returns maxima
  */
-function calcularMaximo(v) {
+ function calcularMaximo(v) {
     if (v.length == 0) {
-        return 0
-    } else {
-        let maxima = v.reduce((a, b) => Math.max(a, b));
-
-
-        return maxima;
+        return 0;
     }
+    return v.reduce((a, b) => Math.max(a, b), 0);
 }
+
 /**
  * Cuenta el número de aprobados
  * @param {Array} v 
