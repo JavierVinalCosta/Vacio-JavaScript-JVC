@@ -10,10 +10,12 @@
 
 function esMayorEdad(edad)
 {
-    if(edad>=18)
-        return 1;
-    else
-    return 0; // Debe escribir el código correcto AQUÍ.
+    var boolEdad;
+    
+    if (edad >= 18 ){boolEdad=true}
+                else{boolEdad=false};
+        
+    return boolEdad;
 }
 /**
  * Obtiene la calificación equivalente a la nota numérica
