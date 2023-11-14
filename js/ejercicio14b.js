@@ -2,7 +2,7 @@
  * Calcula la media de los valores
  * @param {Array} v 
  * @returns media
- * @author: Autor/a
+ * @author: Javier Vinal Costa
  */
  function calcularMedia(v)
  {
@@ -69,13 +69,19 @@
  
  /**
   * Aplicacion principal Ejercicio14
-  * @author: José Gaspar Sánchez García
+  * @author: Javier Vinal Costa
   */
  
  function appMain(){
  
      // Indique cuantas notas desea introducir
-     let numeroNotas=parseInt(prompt("¿Cuantas notas desea introdurcir?"));
+     let numeroNotas=prompt("¿Cuantas notas desea introdurcir?");
+     if(typeof numeroNotas!=="string"){
+        numeroNotas=parseInt(numeroNotas);
+     }else numeroNotas=0;
+     
+
+     
      let notas=new Array();
      var n=-1;
      // Leemos notas desde teclado
@@ -88,6 +94,7 @@
          notas[i]=n;
          console.log(`notas[${i}]: ${notas[i]}`);
      }
+    
  
  
      console.log("La nota media es "+calcularMedia(notas));
