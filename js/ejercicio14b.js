@@ -19,29 +19,28 @@
   * @param {Array} v 
   * @returns minima
   */
- function calcularMinimo(v)
- {
-     if (v.length === 0) {
-         return 0; // Manejo de array vacío
-     }
- 
-     const minimo = v.reduce((min, current) => (current < min ? current : min), v[0]);
-     return minimo;
- }
+  function calcularMinimo(v) {
+    if (v.length === 0) {
+      return 0; // Manejo de array vacío
+    }
+  
+    const minimo = v.reduce((min, current) => (current < min ? current : min), v[0]);
+    return minimo;
+  }
  /**
   * Obtiene la nota Máxima
   * @param {Array} v 
   * @returns maxima
   */
- function calcularMaximo(v)
- {
-     if (v.length === 0) {
-         return 0; // Manejo de array vacío
-     }
- 
-     const maximo = v.reduce((max, current) => (current > max ? current : max), v[0]);
-     return maximo;
- }
+  function calcularMaximo(v) {
+    if (v.length === 0) {
+      return 0; // Manejo de array vacío
+    }
+  
+    const maximo = v.reduce((max, current) => (current > max ? current : max), v[0]);
+    return maximo;
+  }
+  
  /**
   * Cuenta el número de aprobados
   * @param {Array} v 
@@ -64,9 +63,7 @@
      const cantidadSuspensos = v.filter(calificacion => calificacion < aprobado).length;
      return cantidadSuspensos;
  }
- 
- 
- 
+
  /**
   * Aplicacion principal Ejercicio14
   * @author: Javier Vinal Costa
@@ -75,13 +72,8 @@
  function appMain(){
  
      // Indique cuantas notas desea introducir
-     let numeroNotas=prompt("¿Cuantas notas desea introdurcir?");
-     if(typeof numeroNotas!=="string"){
-        numeroNotas=parseInt(numeroNotas);
-     }else numeroNotas=0;
-     
+     let numeroNotas=parseInt(prompt("¿Cuantas notas desea introdurcir?"));
 
-     
      let notas=new Array();
      var n=-1;
      // Leemos notas desde teclado
